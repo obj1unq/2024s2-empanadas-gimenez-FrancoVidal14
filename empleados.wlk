@@ -19,12 +19,12 @@ object galvan {
     deuda  += cantidad 
   }
 
-  method deuda(){
-    return deuda 
+  method dinero() {
+    return if (dinero >= 0) dinero else 0
   }
 
-  method dinero() {
-    return dinero
+  method deuda() {
+    return if (dinero < 0) dinero else 0
   }
 }
 
@@ -51,14 +51,14 @@ object baigorria {
 }
 
 object gimenez {
-  var fondos = 300000
+  var fondo = 300000
   
-  method fondos() {
-    return fondos
+  method fondo() {
+    return fondo
   }
 
   method pagarSueldoA(empleado) {
-    fondos -= empleado.sueldo()
+    fondo -= empleado.sueldo()
     empleado.cobrarMes()
   }
 }
